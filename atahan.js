@@ -48,24 +48,6 @@ const dailyCheck = new CronJob("0 0 * * *", async () => {
 });
 dailyCheck.start();
 
-app.use((req, res, next) => {
-
-    const host = req.headers.host;
-    const sifre = req.headers.sifre;
-
-    if (sifre !== config.sifre) return;
-
-    const ip = req.headers['cf-connecting-ip'] || req.headers['x-forwarded-for'] || req.ip;
-    const ipList = JSON.parse(fs.readFileSync("./Core/Settings/ipList.json", "utf-8"));
-    if (req.headers['cf-ipcity'] == "Ankara" && !ipList.includes(ip)) return;
-
-    if (config.domains.includes(host)) {
-        return next();
-    } else {
-        return;
-    };
-
-});
 app.use("/assets", express.static(path.join(__dirname, '/assets')));
 app.use(bodyParser.json(), bodyParser.urlencoded({ extended: true }), session({ secret: stuffs.randomString(24), resave: true, saveUninitialized: false, rolling: true, name: 'perla', cookie: { maxAge: 20 * 60000 } }), favicon(path.join(__dirname, 'assets/images/favicon.ico')), useragent.express());
 app.set('view engine', 'ejs');
