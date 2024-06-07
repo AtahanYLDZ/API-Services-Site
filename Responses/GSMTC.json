@@ -1,0 +1,26 @@
+{
+  "success": true,
+  "message": "Perla API Hizmetleri",
+  "info": {
+    "API İsmi": "GSMTC",
+    "Başlangıç Tarihi": "Sınırsız",
+    "Bitiş Tarihi": "Sınırsız",
+    "Toplam Limit": "Sınırsız",
+    "Kalan Limit": "Sınırsız",
+    "Gecikme Süresi": "0.01 saniye"
+  },
+  "data": [
+    {
+      "TC": "34861608006",
+      "GSM": "5553723339",
+      "ADI": "RECEP",
+      "SOYADI": "SADE"
+    },
+    {
+      "TC": "11111111110",
+      "GSM": "5553723339",
+      "ADI": "ABDULSELAM",
+      "SOYADI": "DENİZ"
+    }
+  ]
+}

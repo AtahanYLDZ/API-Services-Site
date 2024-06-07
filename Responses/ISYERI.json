@@ -1,0 +1,87 @@
+{
+  "success": true,
+  "message": "Perla API Hizmetleri",
+  "info": {
+    "API İsmi": "ISYERI",
+    "Başlangıç Tarihi": "Sınırsız",
+    "Bitiş Tarihi": "Sınırsız",
+    "Toplam Limit": "Sınırsız",
+    "Kalan Limit": "Sınırsız",
+    "Gecikme Süresi": "0.01 saniye"
+  },
+  "data": {
+    "KISI": {
+      "TC": "65998060092",
+      "ADI": "BEGÜM",
+      "SOYADI": "AKYÜZ",
+      "ISEGIRISTARIHI": "19.09.2023",
+      "DURUMU": "Devam Ediyor"
+    },
+    "ISYERI": {
+      "UNVAN": "KÜÇÜK AVUKATLIK ORTAKLIĞI MAHMUT KÜÇÜK VE ORTAKLARI.5439561",
+      "SEKTOR": "Hukuk müşavirliği",
+      "TEHLIKESINIFI": "Az Tehlikeli",
+      "SGKSICILNO": "26910010110897150340279000",
+      "NACEKODU": "69.10.02",
+      "CALISANSAYISI": "9"
+    },
+    "CALISANLAR": [
+      {
+        "TC": "46630237416",
+        "ADI": "CAHİT",
+        "SOYADI": "ALPAĞUT",
+        "ISEGIRISTARIHI": "14.12.2023",
+        "DURUMU": "Devam Ediyor"
+      },
+      {
+        "TC": "32431611876",
+        "ADI": "BAHAR",
+        "SOYADI": "KEBAPÇIOĞLU",
+        "ISEGIRISTARIHI": "03.05.2023",
+        "DURUMU": "Devam Ediyor"
+      },
+      {
+        "TC": "18809156750",
+        "ADI": "SEDA NUR",
+        "SOYADI": "SERBEST",
+        "ISEGIRISTARIHI": "21.12.2022",
+        "DURUMU": "Devam Ediyor"
+      },
+      {
+        "TC": "18457288520",
+        "ADI": "AHMET",
+        "SOYADI": "VAROL",
+        "ISEGIRISTARIHI": "Yok",
+        "DURUMU": "Devam Ediyor"
+      },
+      {
+        "TC": "39010138960",
+        "ADI": "TUĞÇE",
+        "SOYADI": "KIZILTAN",
+        "ISEGIRISTARIHI": "Yok",
+        "DURUMU": "Devam Ediyor"
+      },
+      {
+        "TC": "28975939620",
+        "ADI": "İLKNUR ŞENCAN",
+        "SOYADI": "DOKUZOĞLU",
+        "ISEGIRISTARIHI": "Yok",
+        "DURUMU": "Devam Ediyor"
+      },
+      {
+        "TC": "66859172756",
+        "ADI": "MELDA SİNEM",
+        "SOYADI": "TUĞLAR",
+        "ISEGIRISTARIHI": "24.11.2023",
+        "DURUMU": "Devam Ediyor"
+      },
+      {
+        "TC": "41149303072",
+        "ADI": "SEVIM",
+        "SOYADI": "YELEKOĞLU",
+        "ISEGIRISTARIHI": "24.11.2023",
+        "DURUMU": "Devam Ediyor"
+      }
+    ]
+  }
+}

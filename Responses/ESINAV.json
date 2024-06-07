@@ -1,0 +1,22 @@
+{
+  "success": true,
+  "message": "Perla API Hizmetleri",
+  "info": {
+    "API İsmi": "ESINAV",
+    "Başlangıç Tarihi": "Sınırsız",
+    "Bitiş Tarihi": "Sınırsız",
+    "Toplam Limit": "Sınırsız",
+    "Kalan Limit": "Sınırsız",
+    "Gecikme Süresi": "0.02 saniye"
+  },
+  "data": [
+    {
+      "TC": "11111111110",
+      "SINAVADI": "MTSK TEORİK B.",
+      "OTURUMTARIHI": "08/12/2019 13:45:00",
+      "SERTIFIKATURU": "MTSK TEORİK B.",
+      "SINAVPUANI": "80",
+      "DURUMU": "Geçti"
+    }
+  ]
+}

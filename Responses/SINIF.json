@@ -1,0 +1,45 @@
+{
+  "success": true,
+  "message": "Perla API Hizmetleri",
+  "info": {
+    "API İsmi": "SINIF",
+    "Başlangıç Tarihi": "Sınırsız",
+    "Bitiş Tarihi": "Sınırsız",
+    "Toplam Limit": "Sınırsız",
+    "Kalan Limit": "Sınırsız",
+    "Gecikme Süresi": "10.41 saniye"
+  },
+  "data": {
+    "KISI": {
+      "TC": "11111111110",
+      "ADI": "ABDULSELAM",
+      "SOYADI": "DENİZ"
+    },
+    "SINIFLAR": [
+      {
+        "KURUMTURU": "İlköğretim Okulu",
+        "KADEME": "İlkokul/Ortaokul",
+        "DURUMU": "Mezun oldu",
+        "YIL": "2011-2012",
+        "SINIFI": "8. Sınıf / C Şubesi",
+        "IL": "İSTANBUL"
+      },
+      {
+        "KURUMTURU": "Özel Meslek Lisesi",
+        "KADEME": "Lise",
+        "DURUMU": "Mezun oldu",
+        "YIL": "2016-2017",
+        "SINIFI": "ML - 12. Sınıf / A Şubesi",
+        "IL": "İSTANBUL"
+      },
+      {
+        "KURUMTURU": "Mesleki Açıköğretim Lisesi",
+        "KADEME": "Açık Lise",
+        "DURUMU": "SİLİK",
+        "YIL": "2022-3",
+        "SINIFI": "Bulunamadı",
+        "IL": "Bulunamadı"
+      }
+    ]
+  }
+}

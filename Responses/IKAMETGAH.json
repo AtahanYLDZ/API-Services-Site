@@ -1,0 +1,20 @@
+{
+  "success": true,
+  "message": "Perla API Hizmetleri",
+  "info": {
+    "API İsmi": "ADRES",
+    "Başlangıç Tarihi": "Sınırsız",
+    "Bitiş Tarihi": "Sınırsız",
+    "Toplam Limit": "Sınırsız",
+    "Kalan Limit": "Sınırsız",
+    "Gecikme Süresi": "0.12 saniye"
+  },
+  "data": {
+    "TC": "19388097038",
+    "ADI": "ŞERİFE GÖKÇE",
+    "SOYADI": "ÇALIŞKAN",
+    "DOGUMTARIHI": "26.04.1980",
+    "ADRESNO": "3217014590",
+    "ADRES": "ZEYBEK MAH. ZEYBEKLER BUL. TOKİ SİTESİ TOKI BLOK  NO: 6/3  İÇ KAPI NO: 30 EFELER / AYDIN"
+  }
+}

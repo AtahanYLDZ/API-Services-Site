@@ -1,0 +1,21 @@
+{
+  "success": true,
+  "message": "Perla API Hizmetleri",
+  "info": {
+    "API İsmi": "SIGORTA",
+    "Başlangıç Tarihi": "Sınırsız",
+    "Bitiş Tarihi": "Sınırsız",
+    "Toplam Limit": "Sınırsız",
+    "Kalan Limit": "Sınırsız",
+    "Gecikme Süresi": "3.23 saniye"
+  },
+  "data": {
+    "TC": "16900119490",
+    "ADI": "ŞULE",
+    "SOYADI": "ERDEM",
+    "CINSIYET": "Kadın",
+    "DOGUMTARIHI": "25.11.2003",
+    "SIGORTA": "60/g Kapsamında Genel Sağlık Sigortalısı",
+    "YAKINLIK": "Çocuğu"
+  }
+}

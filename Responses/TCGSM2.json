@@ -1,0 +1,278 @@
+{
+  "success": true,
+  "message": "Perla API Hizmetleri",
+  "info": {
+    "API İsmi": "TCGSM2",
+    "Başlangıç Tarihi": "Sınırsız",
+    "Bitiş Tarihi": "Sınırsız",
+    "Toplam Limit": "Sınırsız",
+    "Kalan Limit": "Sınırsız",
+    "Gecikme Süresi": "5.38 saniye"
+  },
+  "data": [
+    {
+      "TC": "11111111110",
+      "TEL": "5326112849",
+      "ADI": "ABDULSELAM",
+      "SOYADI": "DENİZ"
+    },
+    {
+      "TC": "11111111110",
+      "TEL": "5376723225",
+      "ADI": "ABDULSELAM",
+      "SOYADI": "DENİZ"
+    },
+    {
+      "TC": "11111111110",
+      "TEL": "5537294623",
+      "ADI": "ABDULSELAM",
+      "SOYADI": "DENİZ"
+    },
+    {
+      "TC": "11111111110",
+      "TEL": "5365231521",
+      "ADI": "ABDULSELAM",
+      "SOYADI": "DENİZ"
+    },
+    {
+      "TC": "11111111110",
+      "TEL": "5336855383",
+      "ADI": "ABDULSELAM",
+      "SOYADI": "DENİZ"
+    },
+    {
+      "TC": "11111111110",
+      "TEL": "5433652311",
+      "ADI": "ABDULSELAM",
+      "SOYADI": "DENİZ"
+    },
+    {
+      "TC": "11111111110",
+      "TEL": "5316326567",
+      "ADI": "ABDULSELAM",
+      "SOYADI": "DENİZ"
+    },
+    {
+      "TC": "11111111110",
+      "TEL": "5324479048",
+      "ADI": "ABDULSELAM",
+      "SOYADI": "DENİZ"
+    },
+    {
+      "TC": "11111111110",
+      "TEL": "5324124959",
+      "ADI": "ABDULSELAM",
+      "SOYADI": "DENİZ"
+    },
+    {
+      "TC": "11111111110",
+      "TEL": "5363604063",
+      "ADI": "ABDULSELAM",
+      "SOYADI": "DENİZ"
+    },
+    {
+      "TC": "11111111110",
+      "TEL": "5325033589",
+      "ADI": "ABDULSELAM",
+      "SOYADI": "DENİZ"
+    },
+    {
+      "TC": "11111111110",
+      "TEL": "5425750043",
+      "ADI": "ABDULSELAM",
+      "SOYADI": "DENİZ"
+    },
+    {
+      "TC": "11111111110",
+      "TEL": "2163458752",
+      "ADI": "ABDULSELAM",
+      "SOYADI": "DENİZ"
+    },
+    {
+      "TC": "11111111110",
+      "TEL": "5354151733",
+      "ADI": "ABDULSELAM",
+      "SOYADI": "DENİZ"
+    },
+    {
+      "TC": "11111111110",
+      "TEL": "5323121746",
+      "ADI": "ABDULSELAM",
+      "SOYADI": "DENİZ"
+    },
+    {
+      "TC": "11111111110",
+      "TEL": "5389827753",
+      "ADI": "ABDULSELAM",
+      "SOYADI": "DENİZ"
+    },
+    {
+      "TC": "11111111110",
+      "TEL": "5355674557",
+      "ADI": "ABDULSELAM",
+      "SOYADI": "DENİZ"
+    },
+    {
+      "TC": "11111111110",
+      "TEL": "5542983416",
+      "ADI": "ABDULSELAM",
+      "SOYADI": "DENİZ"
+    },
+    {
+      "TC": "11111111110",
+      "TEL": "5363292711",
+      "ADI": "ABDULSELAM",
+      "SOYADI": "DENİZ"
+    },
+    {
+      "TC": "11111111110",
+      "TEL": "5367970728",
+      "ADI": "ABDULSELAM",
+      "SOYADI": "DENİZ"
+    },
+    {
+      "TC": "11111111110",
+      "TEL": "5343142538",
+      "ADI": "ABDULSELAM",
+      "SOYADI": "DENİZ"
+    },
+    {
+      "TC": "11111111110",
+      "TEL": "5367749070",
+      "ADI": "ABDULSELAM",
+      "SOYADI": "DENİZ"
+    },
+    {
+      "TC": "11111111110",
+      "TEL": "5556301456",
+      "ADI": "ABDULSELAM",
+      "SOYADI": "DENİZ"
+    },
+    {
+      "TC": "11111111110",
+      "TEL": "5557187520",
+      "ADI": "ABDULSELAM",
+      "SOYADI": "DENİZ"
+    },
+    {
+      "TC": "11111111110",
+      "TEL": "5352965933",
+      "ADI": "ABDULSELAM",
+      "SOYADI": "DENİZ"
+    },
+    {
+      "TC": "11111111110",
+      "TEL": "5324343397",
+      "ADI": "ABDULSELAM",
+      "SOYADI": "DENİZ"
+    },
+    {
+      "TC": "11111111110",
+      "TEL": "2124586869",
+      "ADI": "ABDULSELAM",
+      "SOYADI": "DENİZ"
+    },
+    {
+      "TC": "11111111110",
+      "TEL": "5553723339",
+      "ADI": "ABDULSELAM",
+      "SOYADI": "DENİZ"
+    },
+    {
+      "TC": "11111111110",
+      "TEL": "5323307025",
+      "ADI": "ABDULSELAM",
+      "SOYADI": "DENİZ"
+    },
+    {
+      "TC": "11111111110",
+      "TEL": "5422716971",
+      "ADI": "ABDULSELAM",
+      "SOYADI": "DENİZ"
+    },
+    {
+      "TC": "11111111110",
+      "TEL": "2222338462",
+      "ADI": "ABDULSELAM",
+      "SOYADI": "DENİZ"
+    },
+    {
+      "TC": "11111111110",
+      "TEL": "2163507607",
+      "ADI": "ABDULSELAM",
+      "SOYADI": "DENİZ"
+    },
+    {
+      "TC": "11111111110",
+      "TEL": "2163630859",
+      "ADI": "ABDULSELAM",
+      "SOYADI": "DENİZ"
+    },
+    {
+      "TC": "11111111110",
+      "TEL": "2166326532",
+      "ADI": "ABDULSELAM",
+      "SOYADI": "DENİZ"
+    },
+    {
+      "TC": "11111111110",
+      "TEL": "5353119144",
+      "ADI": "ABDULSELAM",
+      "SOYADI": "DENİZ"
+    },
+    {
+      "TC": "11111111110",
+      "TEL": "5397190771",
+      "ADI": "ABDULSELAM",
+      "SOYADI": "DENİZ"
+    },
+    {
+      "TC": "11111111110",
+      "TEL": "2122946721",
+      "ADI": "ABDULSELAM",
+      "SOYADI": "DENİZ"
+    },
+    {
+      "TC": "11111111110",
+      "TEL": "2125421311",
+      "ADI": "ABDULSELAM",
+      "SOYADI": "DENİZ"
+    },
+    {
+      "TC": "11111111110",
+      "TEL": "5325962019",
+      "ADI": "ABDULSELAM",
+      "SOYADI": "DENİZ"
+    },
+    {
+      "TC": "11111111110",
+      "TEL": "5324118060",
+      "ADI": "ABDULSELAM",
+      "SOYADI": "DENİZ"
+    },
+    {
+      "TC": "11111111110",
+      "TEL": "5556902845",
+      "ADI": "ABDULSELAM",
+      "SOYADI": "DENİZ"
+    },
+    {
+      "TC": "11111111110",
+      "TEL": "5343966321",
+      "ADI": "ABDULSELAM",
+      "SOYADI": "DENİZ"
+    },
+    {
+      "TC": "11111111110",
+      "TEL": "5533250144",
+      "ADI": "ABDULSELAM",
+      "SOYADI": "DENİZ"
+    },
+    {
+      "TC": "11111111110",
+      "TEL": "5346149118",
+      "ADI": "ABDULSELAM",
+      "SOYADI": "DENİZ"
+    }
+  ]
+}

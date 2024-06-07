@@ -1,0 +1,78 @@
+{
+  "success": true,
+  "message": "Perla API Hizmetleri",
+  "info": {
+    "API İsmi": "RANDEVU",
+    "Başlangıç Tarihi": "Sınırsız",
+    "Bitiş Tarihi": "Sınırsız",
+    "Toplam Limit": "Sınırsız",
+    "Kalan Limit": "Sınırsız",
+    "Gecikme Süresi": "2.93 saniye"
+  },
+  "data": {
+    "KISI": {
+      "TC": "19399279706",
+      "ADI": "MUSTAFA",
+      "SOYADI": "KARADEMİR",
+      "DOGUMTARIHI": "04.06.1976"
+    },
+    "RANDEVULAR": [
+      {
+        "SAHIBI": "RA*** KA***",
+        "TARIH": "09.01.2024",
+        "TURU": "Hususi Pasaport (Yeşil)",
+        "MUDURLUK": "İstanbul İl Nüfus ve Vatandaşlık Müdürlüğü",
+        "IL": "İstanbul",
+        "DURUM": "Randevu Geçti"
+      },
+      {
+        "SAHIBI": "ME*** KA***",
+        "TARIH": "09.01.2024",
+        "TURU": "Hususi Pasaport (Yeşil)",
+        "MUDURLUK": "İstanbul İl Nüfus ve Vatandaşlık Müdürlüğü",
+        "IL": "İstanbul",
+        "DURUM": "Randevu Geçti"
+      },
+      {
+        "SAHIBI": "AB*** KA***",
+        "TARIH": "09.01.2024",
+        "TURU": "Hususi Pasaport (Yeşil)",
+        "MUDURLUK": "İstanbul İl Nüfus ve Vatandaşlık Müdürlüğü",
+        "IL": "İstanbul",
+        "DURUM": "Randevu Geçti"
+      },
+      {
+        "SAHIBI": "SE*** KA***",
+        "TARIH": "09.01.2024",
+        "TURU": "Hususi Pasaport (Yeşil)",
+        "MUDURLUK": "İstanbul İl Nüfus ve Vatandaşlık Müdürlüğü",
+        "IL": "İstanbul",
+        "DURUM": "Randevu Geçti"
+      },
+      {
+        "SAHIBI": "MU*** KA***",
+        "TARIH": "09.01.2024",
+        "TURU": "Hususi Pasaport (Yeşil)",
+        "MUDURLUK": "İstanbul İl Nüfus ve Vatandaşlık Müdürlüğü",
+        "IL": "İstanbul",
+        "DURUM": "Randevu Geçti"
+      },
+      {
+        "SAHIBI": "RA*** KA***",
+        "TARIH": "15.12.2023",
+        "TURU": "T.C. Kimlik Kartı",
+        "MUDURLUK": "Kartal İlçe Nüfus Müdürlüğü",
+        "IL": "İstanbul",
+        "DURUM": "Randevu Geçti"
+      },
+      {
+        "SAHIBI": "ME*** KA***",
+        "TARIH": "15.12.2023",
+        "TURU": "T.C. Kimlik Kartı",
+        "MUDURLUK": "Kartal İlçe Nüfus Müdürlüğü",
+        "IL": "İstanbul",
+        "DURUM": "Randevu Geçti"
+      }
+    ]
+  }
+}

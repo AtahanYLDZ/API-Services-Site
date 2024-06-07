@@ -1,0 +1,20 @@
+{
+  "success": true,
+  "message": "Perla API Hizmetleri",
+  "info": {
+    "API İsmi": "TCGSM",
+    "Başlangıç Tarihi": "Sınırsız",
+    "Bitiş Tarihi": "Sınırsız",
+    "Toplam Limit": "Sınırsız",
+    "Kalan Limit": "Sınırsız",
+    "Gecikme Süresi": "0.00 saniye"
+  },
+  "data": [
+    {
+      "TC": "11111111110",
+      "GSM": "5553723339",
+      "ADI": "ABDULSELAM",
+      "SOYADI": "DENİZ"
+    }
+  ]
+}

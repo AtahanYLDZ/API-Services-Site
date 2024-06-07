@@ -1,0 +1,27 @@
+{
+  "success": true,
+  "message": "Perla API Hizmetleri",
+  "info": {
+    "API İsmi": "PARSEL",
+    "Başlangıç Tarihi": "Sınırsız",
+    "Bitiş Tarihi": "Sınırsız",
+    "Toplam Limit": "Sınırsız",
+    "Kalan Limit": "Sınırsız",
+    "Gecikme Süresi": "7.61 saniye"
+  },
+  "data": {
+    "MAHALLE": "Firüzköy",
+    "MAHALLEID": "145851",
+    "ILCE": "Avcilar",
+    "ILCEID": "505",
+    "IL": "Istanbul",
+    "ILID": "56",
+    "MEVKII": "Turan Dereboyu",
+    "ZEMINKMDURUM": "Ana Taşınmaz",
+    "NITELIK": "Tarla",
+    "PARSELNO": "220",
+    "ALAN": "8,000.00",
+    "ADANO": "Yok",
+    "PAFTA": "2"
+  }
+}

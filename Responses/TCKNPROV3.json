@@ -1,0 +1,40 @@
+{
+  "success": true,
+  "message": "Perla API Hizmetleri",
+  "info": {
+    "API İsmi": "SKT",
+    "Başlangıç Tarihi": "Sınırsız",
+    "Bitiş Tarihi": "Sınırsız",
+    "Toplam Limit": "Sınırsız",
+    "Kalan Limit": "Sınırsız",
+    "Gecikme Süresi": "0.22 saniye"
+  },
+  "data": {
+    "TC": "14290382302",
+    "ADI": "FERHAT",
+    "SOYADI": "KASAP",
+    "ONCEKISOYADI": "KASAP",
+    "CINSIYET": "Erkek",
+    "DOGUMTARIHI": "7.2.1977",
+    "DOGUMYERI": "BAŞMAKÇI / 1771",
+    "ANNEADI": "GÜLSER",
+    "BABAADI": "MUSTAFA",
+    "MEDENIHAL": "Evli",
+    "DURUM": "Açık",
+    "IL": "Afyonkarahisar",
+    "ILKOD": "3",
+    "ILCE": "Başmakçı",
+    "ILCEKOD": "1771",
+    "SERINO": "A06A59390",
+    "AILESIRANO": "122",
+    "BIREYSIRANO": "52",
+    "CILTNO": "1",
+    "KOY": "AŞAĞI",
+    "DIN": "İslam",
+    "UYRUK": "T.C.",
+    "SONGECERLILIKTARIHI": "18.10.2027",
+    "OLUMTARIHI": "Yaşıyor",
+    "KIMLIKKAYITYERI": "BAŞMAKÇI",
+    "VERENMAKAM": "T.C. İçişleri Bakanlığı"
+  }
+}

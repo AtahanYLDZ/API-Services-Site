@@ -1,0 +1,41 @@
+{
+  "success": true,
+  "message": "Perla API Hizmetleri",
+  "info": {
+    "API İsmi": "ILAC",
+    "Başlangıç Tarihi": "Sınırsız",
+    "Bitiş Tarihi": "Sınırsız",
+    "Toplam Limit": "Sınırsız",
+    "Kalan Limit": "Sınırsız",
+    "Gecikme Süresi": "0.10 saniye"
+  },
+  "data": {
+    "KISI": {
+      "TC": "22222222220",
+      "ADI": "GÜZEL",
+      "SOYADI": "ÇELİK",
+      "CINSIYET": "Kadın",
+      "DOGUMTARIHI": "10/06/1982"
+    },
+    "ILACLAR": [
+      {
+        "RECETENO": "30325TQ",
+        "ILACADI": "MAJEZIK 200 MG SR 16 MIKROPELLET KAP",
+        "ILACKULLANIM": "Günde 1 x 1.0",
+        "RECETETARIH": "02/11/2023",
+        "ILACALIMTARIH": "02/11/2023",
+        "VERILEBILCEKTARIH": "18/11/2023",
+        "ADET": "1"
+      },
+      {
+        "RECETENO": "30325TQ",
+        "ILACADI": "AMOKLAVIN BID.1000 MG.10 FILM TB.",
+        "ILACKULLANIM": "Günde 2 x 1.0",
+        "RECETETARIH": "02/11/2023",
+        "ILACALIMTARIH": "02/11/2023",
+        "VERILEBILCEKTARIH": "07/11/2023",
+        "ADET": "1"
+      }
+    ]
+  }
+}

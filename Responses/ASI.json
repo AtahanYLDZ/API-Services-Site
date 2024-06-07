@@ -1,0 +1,162 @@
+{
+  "success": true,
+  "message": "Perla API Hizmetleri",
+  "info": {
+    "API İsmi": "ASI",
+    "Başlangıç Tarihi": "Sınırsız",
+    "Bitiş Tarihi": "Sınırsız",
+    "Toplam Limit": "Sınırsız",
+    "Kalan Limit": "Sınırsız",
+    "Gecikme Süresi": "0.84 saniye"
+  },
+  "data": {
+    "KISI": {
+      "TC": "22222222220",
+      "ADI": "GÜZEL",
+      "SOYADI": "ÇELİK",
+      "CINSIYET": "Kadın",
+      "DOGUMTARIHI": "10.06.1982"
+    },
+    "ASILAR": [
+      {
+        "KURUMADI": "AĞRI MERKEZ 017 NOLU AİLE HEKİMLİĞİ BİRİMİ",
+        "ASIADI": "TD ADULT (ERİŞKİN TİP TETANOZ DİFTERİ AŞISI)",
+        "ASIDOZU": "2",
+        "YAPILMATARIHI": "18.04.2018 00:22:00",
+        "GONDERIMTARIHI": "20.04.2018 00:42:27",
+        "BIRIMEATANMATARIHI": "14.12.2023 08:58:24",
+        "SYSTAKIPNO": "5JPB9S7DOSXD8LUR",
+        "HEKIMUNVAN": "MEHMET MELİK YARDIMCI"
+      },
+      {
+        "KURUMADI": "AĞRI MERKEZ 017 NOLU AİLE HEKİMLİĞİ BİRİMİ",
+        "ASIADI": "TD ADULT (ERİŞKİN TİP TETANOZ DİFTERİ AŞISI)",
+        "ASIDOZU": "2",
+        "YAPILMATARIHI": "31.01.2022 13:54:00",
+        "GONDERIMTARIHI": "31.01.2022 14:54:42",
+        "BIRIMEATANMATARIHI": "14.12.2023 08:58:24",
+        "SYSTAKIPNO": "7DVR5AS25VTNVS9XMKX2",
+        "HEKIMUNVAN": "MEHMET MELİK YARDIMCI"
+      },
+      {
+        "KURUMADI": "T.C. SAĞLIK BAKANLIĞI HAMUR İLÇE DEVLET HASTANESİ",
+        "ASIADI": "COVID-19 mRNA (Biontech)",
+        "ASIDOZU": "1",
+        "YAPILMATARIHI": "28.06.2021 10:10:00",
+        "GONDERIMTARIHI": "28.06.2021 10:10:40",
+        "BIRIMEATANMATARIHI": "14.12.2023 08:58:24",
+        "SYSTAKIPNO": "A3LJ10AVTRQ6UPZM",
+        "HEKIMUNVAN": "Yok"
+      },
+      {
+        "KURUMADI": "T.C. SAĞLIK BAKANLIĞI ADANA YÜREĞİR DEVLET HASTANESİ",
+        "ASIADI": "TD ADULT (ERİŞKİN TİP TETANOZ DİFTERİ AŞISI)",
+        "ASIDOZU": "1",
+        "YAPILMATARIHI": "19.10.2023 00:00:00",
+        "GONDERIMTARIHI": "20.10.2023 16:27:08",
+        "BIRIMEATANMATARIHI": "14.12.2023 08:58:24",
+        "SYSTAKIPNO": "7SH6HTMFY2YQ9BGAL2ON",
+        "HEKIMUNVAN": "OĞUZ KOÇAK"
+      },
+      {
+        "KURUMADI": "OSMANİYE MERKEZ 015 NOLU AİLE HEKİMLİĞİ BİRİMİ",
+        "ASIDOZU": "2",
+        "YAPILMATARIHI": "15.04.2015 10:52:57",
+        "GONDERIMTARIHI": "22.04.2015 00:04:58",
+        "BIRIMEATANMATARIHI": "14.12.2023 08:58:24",
+        "SYSTAKIPNO": "51634104699",
+        "HEKIMUNVAN": "SERAP ELMAS"
+      },
+      {
+        "KURUMADI": "AĞRI MERKEZ 017 NOLU AİLE HEKİMLİĞİ BİRİMİ",
+        "ASIADI": "TD ADULT (ERİŞKİN TİP TETANOZ DİFTERİ AŞISI)",
+        "ASIDOZU": "1",
+        "YAPILMATARIHI": "05.09.2019 13:28:00",
+        "GONDERIMTARIHI": "09.09.2019 08:32:57",
+        "BIRIMEATANMATARIHI": "14.12.2023 08:58:24",
+        "SYSTAKIPNO": "7J0EFE8YRCMO3XE3",
+        "HEKIMUNVAN": "MEHMET MELİK YARDIMCI"
+      },
+      {
+        "KURUMADI": "T.C. SAĞLIK BAKANLIĞI AĞRI EĞİTİM VE ARAŞTIRMA HASTANESİ",
+        "ASIADI": "HEPATİT B AŞISI PEDİATRİK",
+        "ASIDOZU": "1",
+        "YAPILMATARIHI": "27.12.2019 09:11:00",
+        "GONDERIMTARIHI": "27.12.2019 09:12:34",
+        "BIRIMEATANMATARIHI": "14.12.2023 08:58:24",
+        "SYSTAKIPNO": "7YCKO9WVIQHKF2IO",
+        "HEKIMUNVAN": "SULTAN CAN"
+      },
+      {
+        "KURUMADI": "OSMANİYE MERKEZ 015 NOLU AİLE HEKİMLİĞİ BİRİMİ",
+        "ASIADI": "DABT-İPA-HİB AŞISI (5'Lİ KARMA AŞI)",
+        "ASIDOZU": "6",
+        "YAPILMATARIHI": "15.04.2015 10:52:00",
+        "GONDERIMTARIHI": "22.04.2015 00:04:55",
+        "BIRIMEATANMATARIHI": "14.12.2023 08:58:24",
+        "SYSTAKIPNO": "51634104652",
+        "HEKIMUNVAN": "SERAP ELMAS"
+      },
+      {
+        "KURUMADI": "GAZİANTEP ŞAHİNBEY 221 NOLU AİLE HEKİMLİĞİ BİRİMİ",
+        "ASIADI": "DABT-İPA-HİB AŞISI (5'Lİ KARMA AŞI)",
+        "ASIDOZU": "2",
+        "YAPILMATARIHI": "20.06.2016 10:55:00",
+        "GONDERIMTARIHI": "22.06.2016 13:37:40",
+        "BIRIMEATANMATARIHI": "14.12.2023 08:58:24",
+        "SYSTAKIPNO": "52487471992",
+        "HEKIMUNVAN": "ELİF BÜYÜKİPEKÇİ"
+      },
+      {
+        "KURUMADI": "AĞRI MERKEZ 017 NOLU AİLE HEKİMLİĞİ BİRİMİ",
+        "ASIADI": "TD ADULT (ERİŞKİN TİP TETANOZ DİFTERİ AŞISI)",
+        "ASIDOZU": "1",
+        "YAPILMATARIHI": "05.03.2018 15:41:00",
+        "GONDERIMTARIHI": "05.03.2018 15:43:33",
+        "BIRIMEATANMATARIHI": "14.12.2023 08:58:24",
+        "SYSTAKIPNO": "5D8YJ2STF5UPIBIS",
+        "HEKIMUNVAN": "MEHMET MELİK YARDIMCI"
+      },
+      {
+        "KURUMADI": "GAZİANTEP ŞAHİNBEY 221 NOLU AİLE HEKİMLİĞİ BİRİMİ",
+        "ASIADI": "KPA 13 VALANLI (KONJUGE PNÖMOKOK AŞISI 13 VALANLI)",
+        "ASIDOZU": "2",
+        "YAPILMATARIHI": "20.06.2016 10:55:00",
+        "GONDERIMTARIHI": "22.06.2016 13:37:40",
+        "BIRIMEATANMATARIHI": "14.12.2023 08:58:24",
+        "SYSTAKIPNO": "52487471992",
+        "HEKIMUNVAN": "ELİF BÜYÜKİPEKÇİ"
+      },
+      {
+        "KURUMADI": "OSMANİYE MERKEZ 015 NOLU AİLE HEKİMLİĞİ BİRİMİ",
+        "ASIADI": "HEPATİT A AŞISI PEDİATRİK",
+        "ASIDOZU": "1",
+        "YAPILMATARIHI": "15.04.2015 10:52:37",
+        "GONDERIMTARIHI": "22.04.2015 00:04:56",
+        "BIRIMEATANMATARIHI": "14.12.2023 08:58:24",
+        "SYSTAKIPNO": "51620820313",
+        "HEKIMUNVAN": "SERAP ELMAS"
+      },
+      {
+        "KURUMADI": "AĞRI MERKEZ TOPLUM SAĞLIĞI MERKEZİ",
+        "ASIADI": "COVID-19 mRNA (Biontech)",
+        "ASIDOZU": "2",
+        "YAPILMATARIHI": "28.08.2021 11:06:00",
+        "GONDERIMTARIHI": "28.08.2021 11:06:20",
+        "BIRIMEATANMATARIHI": "14.12.2023 08:58:24",
+        "SYSTAKIPNO": "AC6OV3QMPEZOY8QA",
+        "HEKIMUNVAN": "Yok"
+      },
+      {
+        "KURUMADI": "AĞRI MERKEZ 017 NOLU AİLE HEKİMLİĞİ BİRİMİ",
+        "ASIADI": "TD ADULT (ERİŞKİN TİP TETANOZ DİFTERİ AŞISI)",
+        "ASIDOZU": "1",
+        "YAPILMATARIHI": "31.12.2021 14:20:00",
+        "GONDERIMTARIHI": "31.12.2021 14:21:33",
+        "BIRIMEATANMATARIHI": "14.12.2023 08:58:24",
+        "SYSTAKIPNO": "2BMKURD4O6EJMWH8Z11T1",
+        "HEKIMUNVAN": "MEHMET MELİK YARDIMCI"
+      }
+    ]
+  }
+}
