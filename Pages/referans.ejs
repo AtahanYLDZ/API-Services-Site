@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="en" data-layout="horizontal" data-topbar="light" data-sidebar="dark" data-sidebar-size="lg"
+  data-sidebar-image="none" data-layout-mode="dark" data-body-image="img-1" data-preloader="true">
+
+
+
+
+<head>
+
+  <meta charset="utf-8" />
+  <title>Perla API Services | Referans</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
+  <meta content="Themesbrand" name="author" />
+  <!-- App favicon -->
+  <link rel="shortcut icon" href="../assets/images/favicon.ico">
+
+  <!-- Layout config Js -->
+  <script src="../assets/js/layout.js"></script>
+  <!-- Bootstrap Css -->
+  <link href="../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+  <!-- Icons Css -->
+  <link href="../assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+  <!-- App Css-->
+  <link href="../assets/css/app.min.css" rel="stylesheet" type="text/css" />
+  <!-- custom Css-->
+  <link href="../assets/css/custom.min.css" rel="stylesheet" type="text/css" />
+
+  <style>
+    .button-group {
+      display: flex;
+      /* Elemanları yan yana sıralamak için */
+    }
+
+    .button-group button {
+      width: 300px;
+      margin-right: 10px;
+      /* Butonlar arasında bir boşluk bırakmak için */
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Begin page -->
+  <div id="layout-wrapper">
+    
+    <%- include('./Extras/header.ejs', { username: mongoData.Auth }) %>
+
+      <!-- ============================================================== -->
+      <!-- Start right Content here -->
+      <!-- ============================================================== -->
+      <div class="main-content">
+
+        <div class="page-content">
+          <div class="container-fluid">
+
+            <center> <a style="color: #fd0000;">NOT: Bakiye çekim işlemleri sadece hoster ve atahan tarafından yapılır onlara ulaşın ve unutmayın sadece bakiyenin 3/1 i çekilir</a></center>
+
+            <!-- start page title -->
+            <div class="row">
+              <div class="col-12">
+                <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+                  <h4 class="mb-sm-0">Referans</h4>
+
+                  <div class="page-title-right">
+                    <ol class="breadcrumb m-0">
+                      <li class="breadcrumb-item"><a href="/anasayfa">Perla API Services</a></li>
+                      <li class="breadcrumb-item active">Referans</li>
+                    </ol>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+            <script>
+              function showAlert(text = "Tanımlanmamış.", color = "4b38b3", duration = 3000) {
+                switch (color) {
+                  case "danger":
+                    color = "#f06548";
+                    break;
+                  case "success":
+                    color = "#45CB85";
+                    break;
+                  case "primary":
+                    color = "#4b38b3";
+                    break;
+                  case "info":
+                    color = "#3577f1";
+                    break;
+                  case "warning":
+                    color = "#ffbe0b";
+                    break;
+                }
+                Toastify({
+                  text,
+                  backgroundColor: color,
+                  duration,
+                  newWindow: true,
+                  close: true,
+                  gravity: "top",
+                  position: "right",
+                  stopOnFocus: true,
+                  onClick: function () { }
+                }).showToast();
+              };
+
+              function copyToClipboard(text = "<%= mongoData.Auth %>") {
+                if (text == "<%= mongoData.Auth %>") showAlert("Referans kodu kopyalandı.", "success", 1500);
+
+                return navigator.clipboard.writeText(text);
+              };
+
+              async function bakiyeAktar() {
+
+                const response = await fetch(`/referans`, {
+                  method: "POST",
+                  headers: {
+                    "Content-Type": "application/json"
+                  },
+                  body: JSON.stringify({
+                    islem: "aktar"
+                  })
+                });
+
+                const data = await response.json();
+                showAlert(data.message, data.success ? "success" : "danger", 1500);
+                
+                return data.success ? setTimeout(() => window.location.reload(), 3000) : null;
+
+              };
+
+              function bakiyeCek() {
+
+                return window.location.href = "/bakiyecek";
+
+              };
+            </script>
+
+            <div class="row">
+              <div class="col-lg-4">
+                <div class="mb-3" style="display: flex; flex-direction: column;">
+                  <!-- Flexbox'u sütun olarak ayarlayarak butonu etiketin altında yerleştiriyoruz -->
+                  <label for="auth" id="auth" class="form-label">Referans Kodu</label>
+                  <div style="display: flex; align-items: center;">
+                    <!-- Butonu yatay olarak hizalamak için iç içe bir flexbox kullanıyoruz -->
+                    <input type="text" id="auth" class="form-control" value="<%= mongoData.Auth %>" readonly>
+                    <span class="btn btn-primary" onclick="copyToClipboard()"
+                      style="background-color: transparent; border: none; margin-top: 5px;">
+                      <i class="ri-file-copy-line"></i>
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4">
+                <div class="mb-3">
+                  <label for="bakiye" id="bakiye" class="form-label">Referans Bakiyesi</label>
+                  <input type="text" id="bakiye" class="form-control text-primary"
+                    value="<%= mongoData.RefInfo.Balance.toLocaleString("TR") %>₺"
+                  readonly>
+                </div>
+              </div>
+              <div class="col-lg-4">
+                <div class="mb-3">
+                  <label for="ref" id="ref" class="form-label">Referans Bakiyesi İşlemleri</label>
+                  <div class="button-group">
+                    <button class="btn btn-primary" onclick="bakiyeAktar()">Bakiye Aktar</button>
+                    <button class="btn btn-primary" onclick="bakiyeCek()">Bakiye Çek</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-xl-4">
+                <div class="card card-height-100">
+                  <div class="card-header align-items-center d-flex">
+                    <h4 class="card-title mb-0 flex-grow-1">Referans'ınız ile kayıt olan Auth'lar</h4>
+                    <div class="flex-shrink-0">
+                    </div>
+                  </div><!-- end card header -->
+                  <div class="card-body">
+                    <div class="table-responsive table-card">
+                      <table class="table align-middle table-borderless table-centered table-nowrap mb-0">
+                        <thead class="text-muted table-light">
+                          <tr>
+                            <th>Auth</th>
+                            <th>Kayıt Tarihi</th>
+                            <th>Kazanç</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <% if (mongoData.RefInfo.Auths.length > 0) { %>
+                          <% mongoData.RefInfo.Auths.reverse().forEach(x => { %>
+                            <tr>
+                              <td><a class="text-primary"><%= x.auth %></a></td>
+                              <td><%= new Date(x.date).toLocaleString("TR") %></td>
+                              <td><a class="text-success"><%= x.price.toLocaleString("tr-TR") %>₺</a></td>
+                            </tr>
+                          <% }) %>
+                          <% } else { %> 
+                            <tr>
+                                <td colspan="3" class="text-center">Henüz bir işlem yapmadınız.</td>
+                            </tr>
+                        <% } %>
+                        </tbody><!-- end tbody -->
+                      </table><!-- end table -->
+                    </div><!-- end -->
+                  </div><!-- end card body -->
+                </div><!-- end card -->
+              </div><!-- end col -->
+              <div class="col-xl-8">
+                <div class="card card-height-100">
+                  <div class="card-header align-items-center d-flex">
+                    <h4 class="card-title mb-0 flex-grow-1">Son <%= mongoData.PaymentInfo.History.filter(x => x.type == "referans").slice(`-${mongoData.RefInfo.Auths.length > 10 ? mongoData.RefInfo.Auths.length : 10}`).length %> Referans Gelirleri</h4>
+                    <div class="flex-shrink-0">
+                    </div>
+                  </div><!-- end card header -->
+                  <div class="card-body">
+                    <div class="table-responsive table-card">
+                      <table class="table align-middle table-borderless table-centered table-nowrap mb-0">
+                        <thead class="text-muted table-light">
+                          <tr>
+                            <th>Auth</th>
+                            <th>Açıklama</th>
+                            <th>Kazanç</th>
+                            <th>Tarih</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <% if (mongoData.PaymentInfo.History.filter(x => x.type == "referans").length > 0) { %>
+                          <% mongoData.PaymentInfo.History.filter(x => x.type == "referans").slice(`-${mongoData.RefInfo.Auths.length > 10 ? mongoData.RefInfo.Auths.length : 10}`).reverse().forEach(el => { %>
+                            <tr>
+                               <td><a class="text-primary"><%= el.auth %></a></td>
+                               <td><%= el.desc %></td>
+                               <td>
+                                <a class="text-success"><%= el.price.toLocaleString("tr-TR") %>₺</a>
+                               </td>
+                               <td><%= new Date(el.date).toLocaleString("TR") %></td>
+                            </tr>
+                           <% }) %>
+                           <% } else { %> 
+                            <tr>
+                                <td colspan="6" class="text-center">Henüz bir işlem yapmadınız.</td>
+                            </tr>
+                        <% } %>
+                        </tbody><!-- end tbody -->
+                      </table><!-- end table -->
+                    </div><!-- end -->
+                  </div><!-- end card body -->
+                </div><!-- end card -->
+              </div><!-- end col -->
+            </div>
+
+            <!-- end page title -->
+          </div><!-- end row -->
+          <!-- container-fluid -->
+        </div>
+        <!-- End Page-content -->
+
+        <%- include('./Extras/footer.ejs') %>
+      </div>
+      <!-- end main content-->
+
+  </div>
+  <!-- END layout-wrapper -->
+
+  <!--preloader-->
+  <div id="preloader">
+    <div id="status">
+      <div class="spinner-border text-primary avatar-sm" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+    </div>
+  </div>
+
+
+</body>
+
+<!-- JAVASCRIPT -->
+<script src="../assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="../assets/libs/simplebar/simplebar.min.js"></script>
+<script src="../assets/libs/node-waves/waves.min.js"></script>
+<script src="../assets/libs/feather-icons/feather.min.js"></script>
+<script src="../assets/js/pages/plugins/lord-icon-2.1.0.js"></script>
+<script src="../assets/js/pages/notifications.init.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
+<!-- prismjs plugin -->
+<script src="../assets/libs/prismjs/prism.js"></script>
+
+<!-- App js -->
+<script src="../assets/js/app.js"></script>
+
+
+</html>

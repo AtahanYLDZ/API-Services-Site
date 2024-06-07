@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en" data-layout="horizontal" data-topbar="light" data-sidebar="dark" data-sidebar-size="lg"
+  data-sidebar-image="none" data-layout-mode="dark" data-body-image="img-1" data-preloader="true">
+
+
+
+
+<head>
+
+  <meta charset="utf-8" />
+  <title>Perla API Services | Apilerim</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
+  <meta content="Themesbrand" name="author" />
+  <!-- App favicon -->
+  <link rel="shortcut icon" href="../assets/images/favicon.ico">
+
+  <!-- Layout config Js -->
+  <script src="../assets/js/layout.js"></script>
+  <!-- Bootstrap Css -->
+  <link href="../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+  <!-- Icons Css -->
+  <link href="../assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+  <!-- App Css-->
+  <link href="../assets/css/app.min.css" rel="stylesheet" type="text/css" />
+  <!-- custom Css-->
+  <link href="../assets/css/custom.min.css" rel="stylesheet" type="text/css" />
+
+</head>
+
+<body>
+
+  <!-- Begin page -->
+  <div id="layout-wrapper">
+
+    <%- include('./Extras/header.ejs', { username: mongoData.Auth }) %>
+
+      <!-- ============================================================== -->
+      <!-- Start right Content here -->
+      <!-- ============================================================== -->
+      <div class="main-content">
+
+        <div class="page-content">
+          <div class="container-fluid">
+
+            <!-- start page title -->
+            <div class="row">
+              <div class="col-12">
+                <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+                  <h4 class="mb-sm-0">Apilerim</h4>
+                  <a style="color: #fd0000;">NOT: API Linkini görmek, kullanmak istiyorsanız aşağıdaki KULLAN Butonuna
+                    basın unutmayın sadece ayarlarda girdiğiniz IP Adresinde API çalışır.</a>
+
+                  <div class="page-title-right">
+                    <ol class="breadcrumb m-0">
+                      <li class="breadcrumb-item"><a href="/anasayfa">Perla API Services</a></li>
+                      <li class="breadcrumb-item active">Apilerim</li>
+
+                    </ol>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+            <script>
+              function getResp(buttonId) {
+
+                if (!buttonId) return;
+
+                window.open(`https://perlaservis.net/api/${buttonId.toLowerCase()}?auth=<%= mongoData.Auth %>&${buttonId.toLowerCase() == "adsoyad" ? "ad=&soyad=&il=&ilce=&annead=&annetc=&babaad=&babatc=&dt=&gsm=" : buttonId.toLowerCase() == "adsoyad2" ? "ad=&soyad=&cinsiyet=&nufusil=&il=&nufusilce=&ilce=&annead=&annetc=&babaad=&babatc=&dt=&gsm=" : ["gsmtc", "sms"].includes(buttonId.toLowerCase()) ? "gsm=" : ["plaka"].includes(buttonId.toLowerCase()) ? "plaka=" : buttonId.toLowerCase() == "parselsorgu" ? "il=&ilce=&mahalle=&ada=&parsel=" : "tc="}`, '_blank');
+
+              }
+            </script>
+            <!-- end page title -->
+            <div class="row">
+              <div class="col-xl-12">
+                <div class="card card-height-100">
+                  <div class="card-header align-items-center d-flex">
+                    <h4 class="card-title mb-0 flex-grow-1">API Listesi</h4>
+                    <div class="flex-shrink-0">
+                    </div>
+                  </div><!-- end card header -->
+                  <div class="card-body">
+                    <div class="table-responsive table-card">
+                      <table class="table align-middle table-borderless table-centered table-nowrap mb-0">
+                        <thead class="text-muted table-light">
+                          <tr>
+                            <th>API Adı</th>
+                            <th>Açıklama</th>
+                            <th>Limit</th>
+                            <th>API Fıyatı</th>
+                            <th>Bitiş Tarihi</th>
+                            <th>API Durumu</th>
+                            <th></th>
+                            <th></th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <% apilerim.forEach(api=> { %>
+                            <tr>
+                              <td><a class="text-primary">
+                                  <%= api.name %>
+                                </a></td>
+                              <td>
+                                <%= api.desc %>
+                              </td>
+                              <td>
+                                <%= api.limit %>
+                              </td>
+                              <td><a class="text-primary">
+                                  <%= Number(api.price).toLocaleString("tr-TR") %>₺
+                                </a></td>
+                              <td>
+                                <%= api.endDate %>
+                              </td>
+                              <td><span class="btn btn-soft-<% if (api.active == "Pasif") { %>danger<% } else if
+                                    (api.active=="Aktif" ) { %>success<% } %>"><%= api.active %></span></td>
+                              <% if (api.active !="" ) { %>
+                                <td><button type="button" class="btn btn-soft-<% if (api.active == "Aktif") { %>danger
+                                    <% } else { %>success<% } %> waves-effect waves-light" onclick="changeStatus('<%=
+                                          api.value %>')"><% if (api.active=="Aktif" ) { %>Dondur<% } else { %>Aktif Et
+                                              <% } %>
+                                  </button></td>
+                                <% } %>
+                                  <td>
+                                    <% if (api.value) { %><button type="button"
+                                        class="btn btn-soft-primary waves-effect waves-light"
+                                        onclick="getResp('<%= api.value %>')">Kullan</button>
+                                      <% } %>
+                                  </td>
+                            </tr>
+                            <% }) %>
+                        </tbody><!-- end tbody -->
+                      </table><!-- end table -->
+                    </div><!-- end -->
+                  </div><!-- end card body -->
+                </div><!-- end card -->
+              </div><!-- end col -->
+            </div>
+          </div><!-- end row -->
+        </div>
+        <!-- container-fluid -->
+      </div>
+      <!-- End Page-content -->
+
+      <%- include('./Extras/footer.ejs') %>
+  </div>
+  <!-- end main content-->
+
+  </div>
+  <!-- END layout-wrapper -->
+
+  <script>
+    function showAlert(text = "Tanımlanmamış.", color = "4b38b3", duration = 3000) {
+      switch (color) {
+        case "danger":
+          color = "#f06548";
+          break;
+        case "success":
+          color = "#45CB85";
+          break;
+        case "primary":
+          color = "#4b38b3";
+          break;
+        case "info":
+          color = "#3577f1";
+          break;
+        case "warning":
+          color = "#ffbe0b";
+          break;
+      }
+      Toastify({
+        text,
+        backgroundColor: color,
+        duration,
+        newWindow: true,
+        close: true,
+        gravity: "top",
+        position: "right",
+        stopOnFocus: true,
+        onClick: function () { }
+      }).showToast();
+    }
+
+    async function changeStatus(value) {
+
+      try {
+
+        const response = await fetch(`/apilerim`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            api: value
+          })
+        })
+
+        const data = await response.json();
+
+        if (!data.success) {
+          return showAlert(data.message, "danger")
+        } else showAlert(data.message, "success", 1500);
+
+        return setTimeout(() => window.location.reload(), 3000);
+      } catch (error) {
+        console.log(error)
+      }
+
+    }
+  </script>
+
+  <!--start back-to-top-->
+  <button onclick="topFunction()" class="btn btn-primary btn-icon" id="back-to-top">
+    <i class="ri-arrow-up-line"></i>
+  </button>
+  <!--end back-to-top-->
+
+  <!--preloader-->
+  <div id="preloader">
+    <div id="status">
+      <div class="spinner-border text-primary avatar-sm" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+    </div>
+  </div>
+
+
+</body>
+
+<!-- JAVASCRIPT -->
+<script src="../assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="../assets/libs/simplebar/simplebar.min.js"></script>
+<script src="../assets/libs/node-waves/waves.min.js"></script>
+<script src="../assets/libs/feather-icons/feather.min.js"></script>
+<script src="../assets/js/pages/plugins/lord-icon-2.1.0.js"></script>
+<script src="../assets/js/pages/notifications.init.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
+<!-- prismjs plugin -->
+<script src="../assets/libs/prismjs/prism.js"></script>
+
+<!-- App js -->
+<script src="../assets/js/app.js"></script>
+
+
+</html>

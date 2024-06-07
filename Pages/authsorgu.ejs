@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en" data-layout="horizontal" data-topbar="light" data-sidebar="dark" data-sidebar-size="lg"
+  data-sidebar-image="none" data-layout-mode="dark" data-body-image="img-1" data-preloader="true">
+
+
+
+
+<head>
+
+  <meta charset="utf-8" />
+  <title>Perla API Services | Auth Sorgu</title>
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <!-- App favicon -->
+  <link rel="shortcut icon" href="../../assets/images/favicon.ico">
+
+  <!-- Layout config Js -->
+  <script src="../../assets/js/layout.js"></script>
+  <!-- Bootstrap Css -->
+  <link href="../../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+  <!-- Icons Css -->
+  <link href="../../assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+  <!-- App Css-->
+  <link href="../../assets/css/app.min.css" rel="stylesheet" type="text/css" />
+  <!-- custom Css-->
+  <link href="../../assets/css/custom.min.css" rel="stylesheet" type="text/css" />
+
+</head>
+
+<body>
+  <style>
+    .custom-btn {
+      width: 100%;
+    }
+    .form-select.pill.mb-3 {
+              opacity: 100% !important;
+              background-color: #05192f !important;
+              } 
+  </style>
+
+  <!-- Begin page -->
+  <div id="layout-wrapper">
+
+    <%- include('./Extras/header.ejs', { username: mongoData.Auth }) %>
+
+      <!-- ============================================================== -->
+      <!-- Start right Content here -->
+      <!-- ============================================================== -->
+      <div class="main-content">
+
+        <div class="page-content">
+          <div class="container-fluid">
+
+            <!-- start page title -->
+            <div class="row">
+              <div class="col-12">
+                <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+                  <h4 class="mb-sm-0">Auth Sorgu</h4>
+
+                  <div class="page-title-right">
+                    <ol class="breadcrumb m-0">
+                      <li class="breadcrumb-item"><a href="/anasayfa">Perla API Services</a></li>
+                      <li class="breadcrumb-item active">Auth Sorgu</li>
+                    </ol>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <form action="/authsorgu" method="POST">
+                <div class="col-lg-6">
+                  <div class="mb-3">
+                    <label for="auth" id="auth" class="form-label">Auth</label>
+                    <div class="d-flex">
+                      <input type="text" class="form-control" name="auth" placeholder="Auth giriniz." required>
+                      <button class="btn btn-primary ms-2" type="submit">Sorgula</button>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+
+            <div class="row">
+              <div class="col-xl-12">
+                <div class="card card-height-100">
+                  <div class="card-header align-items-center d-flex">
+                    <h4 class="card-title mb-0 flex-grow-1">Auth Genel Bilgiler</h4>
+                    <div class="flex-shrink-0">
+                    </div>
+                  </div><!-- end card header -->
+                  <div class="card-body">
+                    <div class="table-responsive table-card">
+                      <table class="table align-middle table-borderless table-centered table-nowrap mb-0">
+                        <thead class="text-muted table-light">
+                          <tr>
+                            <th>Auth</th>
+                            <th>API Sayisi</th>
+                            <th>Bakiye</th>
+                            <th>Ref Bakiye</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <% if (typeof authData !=='undefined' ) { %>
+                              <tr>
+                                <td>
+                                  <%= authData.Auth %>
+                                </td>
+                                <td>
+                                  <%= authData.sorgular.length %>
+                                </td>
+                                <td>
+                                  <a class="text-primary">
+                                    <%= Number(authData.PaymentInfo.Balance).toLocaleString("tr-TR") %>₺
+                                  </a>
+                                </td>
+                                <td>
+                                  <a class="text-primary">
+                                    <%= Number(authData.RefInfo.Balance).toLocaleString("tr-TR") %>₺
+                                  </a>
+                                </td>
+                              </tr>
+                            <% } %>
+                        </tbody><!-- end tbody -->
+                      </table><!-- end table -->
+                    </div><!-- end -->
+                  </div><!-- end card body -->
+                </div><!-- end card -->
+              </div><!-- end col -->
+            </div>
+
+            <div class="row">
+              <div class="col-xl-12">
+                <div class="card card-height-100">
+                  <div class="card-header align-items-center d-flex">
+                    <h4 class="card-title mb-0 flex-grow-1">API Listesi</h4>
+                    <div class="flex-shrink-0">
+                    </div>
+                  </div><!-- end card header -->
+                  <div class="card-body">
+                    <div class="table-responsive table-card">
+                      <table class="table align-middle table-borderless table-centered table-nowrap mb-0">
+                        <thead class="text-muted table-light">
+                          <tr>
+                            <th>API Adı</th>
+                            <th>Açıklama</th>
+                            <th>Limit</th>
+                            <th>API Fıyatı</th>
+                            <th>Bitiş Tarihi</th>
+                            <th>API Durumu</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <% if (typeof authData !=='undefined' ) { %>
+                            <% apilerim.forEach(api=> { %>
+                              <tr>
+                                <td><a class="text-primary">
+                                    <%= api.name %>
+                                  </a></td>
+                                <td>
+                                  <%= api.desc %>
+                                </td>
+                                <td>
+                                  <% if (api.limit) { %><%= api.limit %>
+                                    <% } %>
+                                </td>
+                                <td><a class="text-primary">
+                                    <%= Number(api.price).toLocaleString("tr-TR") %>₺
+                                  </a></td>
+                                <td>
+                                  <% if (api.endDate) { %><%= api.endDate %>
+                                    <% } %>
+                                </td>
+                                <td><span class="btn btn-soft-<% if (api.active == "Pasif") { %>danger<% } else if
+                                      (api.active=="Aktif" ) { %>success<% } %>"><%= api.active %></span></td>
+                              </tr>
+                              <% }) %>
+                                <% } %>
+                        </tbody><!-- end tbody -->
+                      </table><!-- end table -->
+                    </div><!-- end -->
+                  </div><!-- end card body -->
+                </div><!-- end card -->
+              </div><!-- end col -->
+            </div>
+
+        <%- include('./Extras/footer.ejs') %>
+      </div>
+      <!-- end main content-->
+
+  </div>
+  <!-- END layout-wrapper -->
+
+  <!--start back-to-top-->
+  <button onclick="topFunction()" class="btn btn-primary btn-icon" id="back-to-top">
+    <i class="ri-arrow-up-line"></i>
+  </button>
+  <!--end back-to-top-->
+
+  <!--preloader-->
+  <div id="preloader">
+    <div id="status">
+      <div class="spinner-border text-primary avatar-sm" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+    </div>
+  </div>
+
+
+</body>
+
+<!-- JAVASCRIPT -->
+<script src="../assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="../assets/libs/simplebar/simplebar.min.js"></script>
+<script src="../assets/libs/node-waves/waves.min.js"></script>
+<script src="../assets/libs/feather-icons/feather.min.js"></script>
+<script src="../assets/js/pages/plugins/lord-icon-2.1.0.js"></script>
+
+<!-- prismjs plugin -->
+<script src="../assets/libs/prismjs/prism.js"></script>
+
+<!-- App js -->
+<script src="../assets/js/app.js"></script>
+
+
+</html>

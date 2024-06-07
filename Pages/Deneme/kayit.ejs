@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en" data-layout="vertical" data-topbar="light" data-sidebar="dark" data-sidebar-size="lg"
+    data-sidebar-image="none" data-layout-mode="dark" data-body-image="img-1" data-preloader="true">
+
+
+<!-- Mirrored from themesbrand.com/velzon/html/galaxy/auth-signup-basic.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 11 Jun 2023 16:50:17 GMT -->
+
+<head>
+
+    <meta charset="utf-8" />
+    <title>Kayıt Ol | Perla Servis</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="../assets/images/favicon.ico">
+
+    <!-- Layout config Js -->
+    <script src="../assets/js/layout.js"></script>
+    <!-- Bootstrap Css -->
+    <link href="../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <!-- Icons Css -->
+    <link href="../assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <!-- App Css-->
+    <link href="../assets/css/app.min.css" rel="stylesheet" type="text/css" />
+    <!-- custom Css-->
+    <link href="../assets/css/custom.min.css" rel="stylesheet" type="text/css" />
+
+</head>
+
+<body>
+
+    <div class="auth-page-wrapper pt-5">
+
+        <!-- auth page content -->
+        <div class="auth-page-content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="text-center mt-sm-5 mb-4 text-white-50">
+                            <div>
+                                <a href="/anasayfa" class="d-inline-block auth-logo">
+                                    <img src="../assets/images/logo-light.png" alt="" height="20">
+                                </a>
+                            </div>
+                        </div>
+                        <!-- end row -->
+                        <script>
+                            function checkInput(event) {
+                                const inputField = event.target;
+                                let inputValue = inputField.value;
+
+                                inputValue = inputValue.toLowerCase();
+                                inputField.value = inputValue;
+
+                                const regex = /^[a-z]+$/;
+                                if (!regex.test(inputValue)) {
+                                    inputField.value = '';
+                                }
+                            }
+
+                            function checkEmailValidity(event) {
+                                const inputField = event.target;
+                                let emailValue = inputField.value;
+
+                                // Küçük harfe dönüştürme
+                                emailValue = emailValue.toLowerCase();
+                                inputField.value = emailValue;
+
+                                // Geçerli e-posta kontrolü
+                                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                                if (!emailRegex.test(emailValue)) {
+                                    inputField.focus();
+                                }
+                            }
+
+                            function convertToLower(event) {
+                                const inputField = event.target;
+                                let inputValue = inputField.value;
+
+                                // Küçük harfe dönüştürme
+                                inputValue = inputValue.toLowerCase();
+                                inputField.value = inputValue;
+                            }
+                        </script>
+
+                        <div class="row justify-content-center">
+                            <div class="col-md-8 col-lg-6 col-xl-5">
+                                <div class="card mt-4 card-bg-fill">
+
+                                    <div class="card-body p-4">
+                                        <div class="text-center mt-2">
+                                            <h5 class="text-primary">P E R L A Servis</h5>
+                                        </div>
+                                        <div class="p-2 mt-4">
+                                            <% if (typeof mesaj=='undefined' ) { %>
+                                                <% } else if (mesaj) { %>
+                                                    <div class="alert alert-danger alert-dismissible fade show"
+                                                        role="alert">
+                                                        <i class="mdi mdi-block-helper me-2"></i>
+                                                        <strong>
+                                                            <%= mesaj %>
+                                                        </strong>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                                            aria-label="Close"></button>
+                                                    </div>
+                                                    <% } %>
+                                                        <form class="needs-validation" novalidate action="/kayit"
+                                                            method="POST">
+                                                            <% if (typeof mailverification!=='undefined') { %>
+                                                                    <div class="alert alert-success alert-dismissible fade show"
+                                                                        role="alert">
+                                                                        <i class="mdi mdi-check me-2"></i>
+                                                                        <strong>Girdiğiniz E-Mail adresinize doğrulama
+                                                                            linki gönderildi doğrulamayı yaptığınız
+                                                                            zaman hesabınız aktif edilecektir.</strong>
+                                                                        <button type="button" class="btn-close"
+                                                                            data-bs-dismiss="alert"
+                                                                            aria-label="Close"></button>
+                                                                    </div>
+                                                                    <% } %>
+                                                        </form>
+                                                        <% if (typeof mailverification==='undefined') { %>
+                                                        <div class="mt-4">
+                                                            <a href="/giris" class="btn btn-success"><i class="mdi mdi-home me-1"></i>BANA BAS TOTOS</a>
+                                                        </div>
+                                                        <% } %>
+                                        </div>
+                                    </div>
+                                    <!-- end card body -->
+                                </div>
+                                <!-- end card -->
+
+
+
+                            </div>
+                        </div>
+                        <!-- end row -->
+                    </div>
+                    <!-- end container -->
+                </div>
+                <!-- end auth page content -->
+
+                <!-- footer -->
+                <footer class="footer">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="text-center">
+                                    <p class="mb-0 text-muted">&copy;
+                                        <script>document.write(new Date().getFullYear())</script> P E R L A <i
+                                            class="mdi mdi-heart text-danger"></i>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+                <!-- end Footer -->
+            </div>
+            <!-- end auth-page-wrapper -->
+
+            <!-- JAVASCRIPT -->
+            <script src="https://hcaptcha.com/1/api.js" async defer></script>
+            <script src="../assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+            <script src="../assets/libs/simplebar/simplebar.min.js"></script>
+            <script src="../assets/libs/node-waves/waves.min.js"></script>
+            <script src="../assets/libs/feather-icons/feather.min.js"></script>
+            <script src="../assets/js/pages/plugins/lord-icon-2.1.0.js"></script>
+
+            <!-- particles js -->
+            <script src="../assets/libs/particles.js/particles.js"></script>
+            <!-- particles app js -->
+            <script src="../assets/js/pages/particles.app.js"></script>
+            <!-- validation init -->
+            <script src="../assets/js/pages/form-validation.init.js"></script>
+            <!-- password create init -->
+            <script src="../assets/js/pages/passowrd-create.init.js"></script>
+</body>
+
+
+<!-- Mirrored from themesbrand.com/velzon/html/galaxy/auth-signup-basic.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 11 Jun 2023 16:50:18 GMT -->
+
+</html>

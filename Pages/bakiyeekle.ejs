@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en" data-layout="horizontal" data-topbar="light" data-sidebar="dark" data-sidebar-size="lg"
+    data-sidebar-image="none" data-layout-mode="dark" data-body-image="img-1" data-preloader="true">
+
+<head>
+
+    <meta charset="utf-8" />
+    <title>Perla API Services | Bakiye Ekle</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
+    <meta content="Themesbrand" name="author" />
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="../assets/images/favicon.ico">
+
+    <!-- Layout config Js -->
+    <script src="../assets/js/layout.js"></script>
+    <!-- Bootstrap Css -->
+    <link href="../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <!-- Icons Css -->
+    <link href="../assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <!-- App Css-->
+    <link href="../assets/css/app.min.css" rel="stylesheet" type="text/css" />
+    <!-- custom Css-->
+    <link href="../assets/css/custom.min.css" rel="stylesheet" type="text/css" />
+
+</head>
+
+<body>
+
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+
+        <%- include('./Extras/header.ejs', { username: mongoData.Auth }) %>
+
+            <!-- ============================================================== -->
+            <!-- Start right Content here -->
+            <!-- ============================================================== -->
+            <div class="main-content">
+
+                <div class="page-content">
+                    <div class="container-fluid">
+
+                        <!-- start page title -->
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+                                    <h4 class="mb-sm-0">Kripto Bakiye Ekle</h4>
+
+                                    <div class="page-title-right">
+                                        <ol class="breadcrumb m-0">
+                                            <li class="breadcrumb-item"><a href="/anasayfa">Perla API Services</a></li>
+                                            <li class="breadcrumb-item active">Kripto Bakiye Ekle</li>
+                                        </ol>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end page title -->
+
+                        <script>
+              function copyToClipboard(text) {
+                showAlert("TRX Adresi kopyalandı.", "success", 1500);
+
+                return navigator.clipboard.writeText(text);
+              };
+
+              function showAlert(text = "Tanımlanmamış.", color = "4b38b3", duration = 3000) {
+                switch (color) {
+                  case "danger":
+                    color = "#f06548";
+                    break;
+                  case "success":
+                    color = "#45CB85";
+                    break;
+                  case "primary":
+                    color = "#4b38b3";
+                    break;
+                  case "info":
+                    color = "#3577f1";
+                    break;
+                  case "warning":
+                    color = "#ffbe0b";
+                    break;
+                }
+                Toastify({
+                  text,
+                  backgroundColor: color,
+                  duration,
+                  newWindow: true,
+                  close: true,
+                  gravity: "top",
+                  position: "right",
+                  stopOnFocus: true,
+                  onClick: function () { }
+                }).showToast();
+              };
+                        </script>
+
+                        <div class="row justify-content-center">
+                            <div class="col-md-8 col-lg-6 col-xl-5">
+                                <div class="card mt-4 card-bg-fill">
+
+                                    <div class="card-body p-4">
+                                        <div class="text-center mt-2">
+                                            <h5 class="text-primary">P E R L A Servis</h5>
+                                            <p class="text-muted"><% if (typeof payment==='undefined' ) { %>Bakiye eklemek için aşağıya TL cinsinden yüklemek istediğiniz tutarı girin.<% } else { %>Aşağıdaki TRX Adresine belirtilen NET Miktarı giriniz eksik veya fazla girerseniz bakiyeniz hesabınıza yansımaz.<% } %></p>
+                                        </div>
+                                        <center><a style="color: #fd0000; ">NOT: Sadece TRX (TRON) Cinsinden Kripto ödemesi yapabilirsiniz.</a></center>
+                                        <div class="p-2 mt-4">
+
+                                            <% if (typeof mesaj=='undefined' ) { %>
+                                                <% } else if (mesaj) { %>
+                                                    <div class="alert alert-<% if (success == true) { %>success<% } else { %>danger<% } %> alert-dismissible fade show"
+                                                        role="alert">
+                                                        <i
+                                                            class="mdi mdi-<% if (success == true) { %>check<% } else { %>block-helper<% } %> me-2"></i>
+                                                        <strong>
+                                                            <%= mesaj %>
+                                                        </strong>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                                            aria-label="Close"></button>
+                                                    </div>
+                                                    <% } %>
+
+                                                    <form action="/bakiyeekle" method="POST">
+                                                        <% if (typeof payment==='undefined' ) { %>
+                                                            <div class="mb-3">
+                                                                <label for="amount" id="amount" class="form-label">Tutar</label>
+                                                                <input type="number" class="form-control" name="amount" placeholder="Yüklemek istediğiniz tutar." required="true" min="0" step="1">
+                                                            </div>
+                                                            <div class="mt-4">
+                                                                <button class="btn btn-primary w-100" type="submit">Onayla</button>
+                                                            </div>
+                                                            <div class="mt-4">
+                                                                <center><a style="color: #fd0000; ">NOT: Eğer ki Kripto kullanmıyorsanız PAPARA ile ödeme yapmak için</a></center>
+                                                                <center><a style="color: #0094fd; " href="https://t.me/perlaservis"> Telegram:  <a style="color: #e1ff00; " href="https://t.me/hosterdrake"> @hosterdrake </a>/ <a style="color: #e1ff00; " href="https://t.me/atahanyldz"> @atahanyldz</a></center>
+                                                                <center><a style="color: #0094fd; " href="https://discord.gg/perlaservis"> Discord:  <a style="color: #e1ff00; " href="https://discord.com/users/1156683206616174723"> hosterdrake </a>/ <a style="color: #e1ff00; " href="https://discord.com/users/1190468600436371456"> atahanyldz</a></center>
+                                                            </div>
+                                                        <% } else { %>
+                                                            <div class="row">
+                                                                <div class="col-lg-6">
+                                                                    <div class="mb-3">
+                                                                        <label for="amount" id="amount" class="form-label">Bakiye</label>
+                                                                        <input type="number" name="amount" class="form-control" placeholder="Bakiye miktarını giriniz." value="<%= payment.try %>" required readonly>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-lg-6">
+                                                                    <div class="mb-3">
+                                                                        <label for="trx" id="trx" class="form-label">TRX Miktarı</label>
+                                                                        <input type="number" class="form-control" placeholder="Bakiye miktarını giriniz." value="<%= payment.price %>" required readonly>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="mb-3" style="display: flex; flex-direction: column;">
+                                                                <label for="address" id="address" class="form-label">TRX Adresi</label>
+                                                                <div style="display: flex;">
+                                                                    <input type="text" class="form-control" placeholder="Bakiye miktarını giriniz." value="<%= payment.adres %>" required readonly>
+                                                                    <span class="btn btn-primary" onclick="copyToClipboard('<%= payment.adres %>')" style="background-color: transparent; border: none; margin-left: 5px;">
+                                                                        <i class="ri-file-copy-line"></i>
+                                                                    </span>
+                                                                </div>
+                                                                &nbsp;
+                                                                <center>
+                                                                    <img src="<%= payment.qrCode %>" alt="QR Kodu">
+                                                                </center>
+                                                            </div>
+                                                            <div class="mt-4">
+                                                                <button name="accept" value="true" class="btn btn-primary w-100" type="submit">Gönderdim</button>
+                                                            </div>
+                                                        <% } %>
+                                                    </form>
+                                                    
+                                        </div>
+                                    </div>
+                                    <!-- end card body -->
+                                </div>
+                                <!-- end card -->
+
+                            </div>
+
+                        </div>
+                        <!-- container-fluid -->
+                    </div><!-- End Page-content -->
+
+                    <%- include('./Extras/footer.ejs') %>
+                </div>
+                <!-- end main content-->
+
+            </div>
+            <!-- END layout-wrapper -->
+
+            <!--preloader-->
+            <div id="preloader">
+                <div id="status">
+                    <div class="spinner-border text-primary avatar-sm" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- JAVASCRIPT -->
+            <script src="../assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+            <script src="../assets/libs/simplebar/simplebar.min.js"></script>
+            <script src="../assets/libs/node-waves/waves.min.js"></script>
+            <script src="../assets/libs/feather-icons/feather.min.js"></script>
+            <script src="../assets/js/pages/plugins/lord-icon-2.1.0.js"></script>
+            <script src="../assets/js/pages/notifications.init.js"></script>
+            <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
+            <!-- profile-setting init js -->
+            <script src="../assets/js/pages/profile-setting.init.js"></script>
+
+            <!-- App js -->
+            <script src="../assets/js/app.js"></script>
+</body>
+
+</html>

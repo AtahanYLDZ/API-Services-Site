@@ -1,0 +1,109 @@
+<head>
+    <title>Giriş | Perla Servis</title>
+    <link rel="stylesheet" href="../../assets/css/giris.css">
+</head>
+<div class="alert alert-primary" role="alert" style="color: white;">
+<% if (typeof message !== "undefined") { %>
+    <%= message %>
+<% } %>
+</div>
+<br>
+<div class="container" id="container">
+    <div class="form-container sign-up-container">
+        <form action="/kayit" method="POST">
+            <h1>Kayıt Ol</h1>
+            <span>Kayıt olmak için aşağıda bulunan kısımları lütfen doldurun.</span>
+            <input type="text" name="auth" placeholder="Auth" oninput="checkInput(event)" required />
+            <input type="email" name="email" placeholder="E-Mail" name="email" oninput="convertToLower(event)" required />
+            <input type="password" name="password" placeholder="Şifre" onpaste="return false" required />
+            <input type="text" name="ref" placeholder="Referans Auth" />
+            <center>
+                <div class="h-captcha" data-sitekey="35a778aa-46e1-438f-9ed8-405e3e2b96b9">
+                </div>
+            </center>
+            <a href="/kurallar">Kuralları okudun mu?</a>
+            <button>Kayıt Ol</button>
+        </form>
+    </div>
+    <div class="form-container sign-in-container">
+        <form action="/giris" method="POST">
+            <h1>Giriş yap</h1>
+            <span>Siteye giriş yapmak için aşağıdaki bilgileri lütfen doldurun.</span>
+            <input type="text" name="auth" placeholder="Auth veya E-Mail" />
+            <input type="password" name="password" placeholder="Şifre" />
+            <label for="rememberMe"><input type="checkbox" id="rememberMe" name="hatirlat">Beni Hatırla</label>
+            <center>
+                <div class="h-captcha" data-sitekey="35a778aa-46e1-438f-9ed8-405e3e2b96b9">
+                </div>
+            </center>
+            <a href="/sifreunuttum">Şifreni mi unuttun?</a>
+            <button>Giriş Yap</button>
+        </form>
+    </div>
+    <div class="overlay-container">
+        <div class="overlay">
+            <div class="overlay-panel overlay-left">
+                <h1>Perla Servis</h1>
+                <p>Zaten sitemize kayıtlı mısın? o zaman aşağıdaki giriş yap butonuna basarak giriş yapabilirsin.</p>
+                <button class="ghost" id="signIn">Giriş Yap</button>
+            </div>
+            <div class="overlay-panel overlay-right">
+                <h1>Perla Servis</h1>
+                <p>Sitemize kayıtlı değil misin? o zaman aşağıdaki kayıt ol butonuna basarak kayıt olabilirsin.</p>
+                <button class="ghost" id="signUp">Kayıt Ol</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    const signUpButton = document.getElementById('signUp');
+    const signInButton = document.getElementById('signIn');
+    const container = document.getElementById('container');
+
+    signUpButton.addEventListener('click', () => {
+        container.classList.add("right-panel-active");
+    });
+
+    signInButton.addEventListener('click', () => {
+        container.classList.remove("right-panel-active");
+    });
+
+    function checkInput(event) {
+        const inputField = event.target;
+        let inputValue = inputField.value;
+
+        inputValue = inputValue.toLowerCase();
+        inputField.value = inputValue;
+
+        const regex = /^[a-z]+$/;
+        if (!regex.test(inputValue)) {
+            inputField.value = '';
+        }
+    }
+
+    function checkEmailValidity(event) {
+        const inputField = event.target;
+        let emailValue = inputField.value;
+
+        // Küçük harfe dönüştürme
+        emailValue = emailValue.toLowerCase();
+        inputField.value = emailValue;
+
+        // Geçerli e-posta kontrolü
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(emailValue)) {
+            inputField.focus();
+        }
+    }
+
+    function convertToLower(event) {
+        const inputField = event.target;
+        let inputValue = inputField.value;
+
+        // Küçük harfe dönüştürme
+        inputValue = inputValue.toLowerCase();
+        inputField.value = inputValue;
+    }
+</script>
+<script src="https://hcaptcha.com/1/api.js?hl=tr" async defer></script>

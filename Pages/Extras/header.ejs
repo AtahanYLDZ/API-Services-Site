@@ -1,0 +1,198 @@
+<header id="page-topbar">
+  <div class="layout-width">
+    <div class="navbar-header">
+      <div class="d-flex">
+        <!-- LOGO -->
+        <div class="navbar-brand-box horizontal-logo">
+          <a href="/anasayfa" class="logo logo-dark">
+            <span class="logo-sm">
+              <img src="../../assets/images/logo-sm.png" alt="" height="22">
+            </span>
+            <span class="logo-lg">
+              <img src="../../assets/images/logo-dark.png" alt="" height="17">
+            </span>
+          </a>
+
+          <a href="/anasayfa" class="logo logo-light">
+            <span class="logo-sm">
+              <img src="../../assets/images/logo-sm.png" alt="" height="22">
+            </span>
+            <span class="logo-lg">
+              <img src="../../assets/images/logo-light.png" alt="" height="17">
+            </span>
+          </a>
+        </div>
+
+        <button type="button" class="btn btn-sm px-3 fs-16 header-item vertical-menu-btn topnav-hamburger"
+          id="topnav-hamburger-icon">
+          <span class="hamburger-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+        </button>
+
+      </div>
+
+      <div class="d-flex align-items-center">
+        <div class="dropdown ms-1 topbar-head-dropdown header-item">
+
+          <% if (["hoster","atahanyldz"].includes(mongoData.Auth) || !mongoData.Discord.ID && mongoData.sorgular.length > 0) { %>
+            <div class="ms-1 header-item d-none d-sm-flex">
+              <a href="/oauth/discord" class="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle">
+                <i class='bx bxl-discord-alt fs-22'></i>
+              </a>
+            </div>
+          <% } %>
+
+          <div class="ms-1 header-item d-none d-sm-flex">
+            <button type="button" class="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle"
+              data-toggle="fullscreen">
+              <i class='bx bx-fullscreen fs-22'></i>
+            </button>
+          </div>
+
+          <div class="dropdown header-item topbar-user">
+            <button type="button" class="btn" id="page-header-user-dropdown" data-bs-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+
+              <span class="d-flex align-items-center">
+                <img class="rounded-circle header-profile-user" src="<%= mongoData.Discord.AvatarURL || "../../assets/images/users/avatar-1.png" %>"
+                  alt="perla-pp">
+
+                <span class="d-inline-block ms-1 fw-semibold user-name-text">
+                  <%= mongoData.Auth %>
+                </span>
+
+              </span>
+            </button>
+            <div class="dropdown-menu dropdown-menu-end">
+              <!-- item-->
+              <h6 class="dropdown-header">Merhaba <%= mongoData.Auth %>!</h6>
+              <a class="dropdown-item" href="/ayarlar"><span
+                  class="mdi mdi-cog-outline text-muted fs-16 align-middle me-1"></i>
+                  <span class="align-middle">Ayarlar</span></a>
+              <a class="dropdown-item" href="/bakiyeekle"><i
+                  class="mdi mdi-wallet text-muted fs-16 align-middle me-1"></i>
+                <span class="align-middle">Bakiye Ekle: <b class="text-primary"><%= mongoData.PaymentInfo.Balance.toLocaleString("TR") %>₺</b></span></a>
+              <a class="dropdown-item" href="/cikis"><i class="mdi mdi-logout text-muted fs-16 align-middle me-1"></i>
+                <span class="align-middle" data-key="t-logout">Çıkış Yap</span></a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="app-menu navbar-menu border-end">
+  <!-- LOGO -->
+  <div class="navbar-brand-box">
+    <!-- Dark Logo-->
+    <a href="/anasayfa" class="logo logo-dark">
+      <span class="logo-sm">
+        <img src="../../assets/images/logo-sm.png" alt="" height="22">
+      </span>
+      <span class="logo-lg">
+        <img src="../../assets/images/logo-dark.png" alt="" height="17">
+      </span>
+    </a>
+    <!-- Light Logo-->
+    <a href="/anasayfa" class="logo logo-light">
+      <span class="logo-sm">
+        <img src="../../assets/images/logo-sm.png" alt="" height="22">
+      </span>
+      <span class="logo-lg">
+        <img src="../../assets/images/logo-light.png" alt="" height="17">
+      </span>
+    </a>
+    <button type="button" class="btn btn-sm p-0 fs-20 header-item float-end btn-vertical-sm-hover" id="vertical-hover">
+      <i class="ri-record-circle-line"></i>
+    </button>
+  </div>
+
+  <div id="scrollbar">
+    <div class="container-fluid">
+
+      <div id="two-column-menu">
+      </div>
+      <ul class="navbar-nav" id="navbar-nav">
+        <li class="menu-title"><span data-key="t-menu"></span></li>
+        <li class="nav-item">
+          <a class="nav-link menu-link" href="/anasayfa" role="button" aria-expanded="false"
+            aria-controls="sidebarDashboards">
+            <i class="bx bx-home-heart"></i> <span data-key="t-dashboards"> Ana Sayfa </span>
+          </a>
+        </li> <!-- end Dashboard Menu -->
+
+        <li class="nav-item">
+          <a class="nav-link menu-link" href="/magaza" role="button" aria-expanded="false" aria-controls="sidebarApps">
+            <i class="ri-shopping-cart-line"></i> <span data-key="t-apps"> Mağaza </span>
+          </a>
+        </li>
+
+
+        <li class="nav-item">
+          <a class="nav-link menu-link" href="/apilerim" role="button" aria-expanded="false"
+            aria-controls="sidebarApps">
+            <i class="bx bx bx-code-alt"></i> <span data-key="t-apps"> Apilerim </span>
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link menu-link" href="/referans" role="button" aria-expanded="false"
+            aria-controls="sidebarApps">
+            <i class="ri-refund-2-line"></i> <span data-key="t-apps"> Referans </span>
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link menu-link" href="/ayarlar#redeemCode" role="button" aria-expanded="false"
+            aria-controls="sidebarApps">
+            <i class="bx bx-gift"></i> <span data-key="t-apps"> Kod Kullan </span>
+          </a>
+        </li>
+
+        <% if (["devran"].includes(mongoData.Auth)) { %>
+          <li class="nav-item">
+            <a class="nav-link menu-link" href="/authsorgu" role="button" aria-expanded="false"
+              aria-controls="sidebarApps">
+              <i class="ri-apps-2-line"></i> <span data-key="t-apps"> Auth Sorgu </span>
+            </a>
+          </li>      
+          <% } %>
+
+        <% if (["servis","hoster","atahanyldz","atahan","perla"].includes(mongoData.Auth)) { %>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="collapse" href="#menu-dropdown" role="button" aria-expanded="false" aria-controls="menu-dropdown">
+              <i class="ri-apps-2-line"></i> <span> Admin </span>
+            </a>
+            <div class="collapse menu-dropdown" id="menu-dropdown">
+              <ul class="nav nav-sm flex-column">
+                <li class="nav-item">
+                  <a href="/admin/authislemleri" class="nav-link"> Auth Islemleri </a>
+                </li>
+                <li class="nav-item">
+                  <a href="/admin/duyuruislemleri" class="nav-link"> Duyuru Islemleri </a>
+                </li>
+              </ul>
+            </div>
+          </li>          
+          <% } %>
+
+      </ul>
+    </div>
+    <!-- Sidebar -->
+  </div>
+
+  <div class="sidebar-background"></div>
+</div>
+
+<div class="vertical-overlay"></div>
+<style>
+  .sidebar-background {
+    opacity: 100% !important;
+    background-color: #05192f !important;
+  }
+</style>

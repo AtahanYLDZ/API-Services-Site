@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="en" data-layout="vertical" data-topbar="light" data-sidebar="dark" data-sidebar-size="lg"
+    data-sidebar-image="none" data-layout-mode="dark" data-body-image="img-1" data-preloader="true">
+
+<head>
+
+    <meta charset="utf-8" />
+    <title>Perla API Services | Kayıt Ol</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="Perla Servis" name="description" />
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="../assets/images/favicon.ico">
+
+    <!-- Layout config Js -->
+    <script src="../assets/js/layout.js"></script>
+    <!-- Bootstrap Css -->
+    <link href="../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <!-- Icons Css -->
+    <link href="../assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <!-- App Css-->
+    <link href="../assets/css/app.min.css" rel="stylesheet" type="text/css" />
+    <!-- custom Css-->
+    <link href="../assets/css/custom.min.css" rel="stylesheet" type="text/css" />
+
+</head>
+
+<body>
+
+    <div class="auth-page-wrapper pt-5">
+
+        <!-- auth page content -->
+        <div class="auth-page-content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="text-center mt-sm-5 mb-4 text-white-50">
+                            <div>
+                                <a href="/anasayfa" class="d-inline-block auth-logo">
+                                    <img src="../assets/images/logo-light.png" alt="" height="20">
+                                </a>
+                            </div>
+                        </div>
+                        <!-- end row -->
+                        <script>
+                            function checkInput(event) {
+                                const inputField = event.target;
+                                let inputValue = inputField.value;
+
+                                inputValue = inputValue.toLowerCase();
+                                inputField.value = inputValue;
+
+                                const regex = /^[a-z]+$/;
+                                if (!regex.test(inputValue)) {
+                                    inputField.value = '';
+                                }
+                            }
+
+                            function checkEmailValidity(event) {
+                                const inputField = event.target;
+                                let emailValue = inputField.value;
+
+                                // Küçük harfe dönüştürme
+                                emailValue = emailValue.toLowerCase();
+                                inputField.value = emailValue;
+
+                                // Geçerli e-posta kontrolü
+                                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                                if (!emailRegex.test(emailValue)) {
+                                    inputField.focus();
+                                }
+                            }
+
+                            function convertToLower(event) {
+                                const inputField = event.target;
+                                let inputValue = inputField.value;
+
+                                // Küçük harfe dönüştürme
+                                inputValue = inputValue.toLowerCase();
+                                inputField.value = inputValue;
+                            }
+
+                            function removeRefFromURL() {
+    // Mevcut URL'yi al
+    var currentURL = window.location.href;
+    // Eğer "?ref=" kısmı varsa
+    if (currentURL.includes('?ref=')) {
+        // "?ref=" sonrasını kaldır
+        var updatedURL = currentURL.split('?ref=')[0];
+        // Güncellenmiş URL'yi kullanarak tarayıcı geçmişini güncelle
+        window.history.replaceState({}, document.title, updatedURL);
+    }
+}
+window.addEventListener('DOMContentLoaded', removeRefFromURL);
+                        </script>
+
+                        <div class="row justify-content-center">
+                            <div class="col-md-8 col-lg-6 col-xl-5">
+                                <div class="card mt-4 card-bg-fill">
+
+                                    <div class="card-body p-4">
+                                        <% if (typeof mailverification !== 'undefined') { %>
+                                        <div class="text-center mt-2">
+                                            <h5 class="text-primary">P E R L A Servis</h5>
+                                            <p class="text-muted">Kayıt olmak için aşağıdaki kısımları doldur.</p>
+                                        </div>
+                                        <% } %>
+                                        <div class="p-2 mt-4">
+                                            <% if (typeof mesaj=='undefined' ) { %>
+                                                <% } else if (mesaj) { %>
+                                                    <div class="alert alert-danger alert-dismissible fade show"
+                                                        role="alert">
+                                                        <i class="mdi mdi-block-helper me-2"></i>
+                                                        <strong>
+                                                            <%= mesaj %>
+                                                        </strong>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                                            aria-label="Close"></button>
+                                                    </div>
+                                                    <% } %>
+                                                        <form class="needs-validation" novalidate action="/kayit"
+                                                            method="POST">
+                                                            <% if (typeof mailverification == 'undefined') { %>
+                                                                <div class="mb-3">
+                                                                    <label for="auth" class="form-label">Auth <span
+                                                                            class="text-danger">*</span></label>
+                                                                    <input type="text" class="form-control" id="auth"
+                                                                        placeholder="Auth belirle" required="true"
+                                                                        name="auth" oninput="checkInput(event)">
+                                                                    <div class="invalid-feedback">
+                                                                        Lütfen Auth giriniz
+                                                                    </div>
+                                                                </div>
+
+                                                            <div class="mb-3">
+                                                                <label for="useremail" class="form-label">Email <span
+                                                                        class="text-danger">*</span></label>
+                                                                <input type="email" class="form-control" id="useremail"
+                                                                    placeholder="Mail adresi giriniz" required="true"
+                                                                    name="email" oninput="convertToLower(event)"
+                                                                    onblur="checkEmailValidity(event)">
+                                                                <div class="invalid-feedback">
+                                                                    Lütfen mail giriniz
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="mb-3">
+                                                                <label class="form-label"
+                                                                    for="password-input">Şifre</label>
+                                                                <div class="position-relative auth-pass-inputgroup">
+                                                                    <input type="password" name="password"
+                                                                        class="form-control pe-5 password-input"
+                                                                        onpaste="return false"
+                                                                        placeholder="Şifre belirle" id="password-input"
+                                                                        aria-describedby="passwordInput"
+                                                                        pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                                                                        required>
+                                                                    <button
+                                                                        class="btn btn-link position-absolute end-0 top-0 text-decoration-none text-muted password-addon"
+                                                                        type="button" id="password-addon"><i
+                                                                            class="ri-eye-fill align-middle"></i></button>
+                                                                    <div class="invalid-feedback">
+                                                                        Lütfen şifre belirleyiniz
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="mb-3">
+                                                                <label for="ref" class="form-label">Referans Auth</label>
+                                                                <input type="text" class="form-control" id="ref"
+                                                                    placeholder="Referans'iniz var ise referans authunzuu girin"
+                                                                    name="ref" <% if (typeof ref !== "undefined") { %>value="<%= ref %>" readonly="true"<% } %> oninput="checkInput(event)">
+                                                            </div>
+
+                                                            <div class="mb-3 form-check">
+                                                                <input type="checkbox" class="form-check-input" id="remember-me" required>
+                                                                <label class="form-check-label" for="remember-me"><a href="/kurallar" class="fw-semibold text-primary text-decoration-underline">Kuralları kabul ediyor musun?</a></label>
+                                                            </div>
+
+                                                            <center>
+                                                                <div class="h-captcha"
+                                                                    data-sitekey="35a778aa-46e1-438f-9ed8-405e3e2b96b9">
+                                                                </div>
+                                                            </center>
+
+                                                            <div id="password-contain"
+                                                                class="p-3 bg-light mb-2 rounded">
+                                                                <h5 class="fs-13">Şifre gereksinimleri</h5>
+                                                                <p id="pass-length" class="invalid fs-12 mb-2">Minimum
+                                                                    <b>8 karakter giriniz</b>
+                                                                </p>
+                                                                <p id="pass-lower" class="invalid fs-12 mb-2">En az 1
+                                                                    <b>küçük</b> harf giriniz (a-z)
+                                                                </p>
+                                                                <p id="pass-upper" class="invalid fs-12 mb-2">En az 1
+                                                                    <b>büyük</b> harf giriniz (A-Z)
+                                                                </p>
+                                                                <p id="pass-number" class="invalid fs-12 mb-0">En az 1
+                                                                    <b>sayı</b> giriniz (0-9)
+                                                                </p>
+                                                            </div>
+
+                                                            <div class="mt-4">
+                                                                <button class="btn btn-primary w-100"
+                                                                    type="submit">Kayıt Ol</button>
+                                                            </div>
+                                                            <div class="mt-4 text-center">
+                                                                <p class="mb-0">Zaten bir hesabınız var mı? <a
+                                                                        href="/giris"
+                                                                        class="fw-semibold text-primary text-decoration-underline">
+                                                                        Giriş </a> </p>
+                                                            </div>
+                                        </div>
+                                        <% } else { %>
+                                        <div class="alert alert-success alert-dismissible fade show"
+                                            role="alert">
+                                            <i class="mdi mdi-check me-2"></i>
+                                            <strong>Girdiğiniz E-Mail adresinize doğrulama linki gönderildi doğrulamayı yaptığınız zaman hesabınız aktif edilecektir.</strong>
+                                            <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <% } %>  
+                                        </form>
+                                    </div>
+                                </div>
+                                <!-- end card body -->
+                            </div>
+                            <!-- end card -->
+
+
+
+                        </div>
+                    </div>
+                    <!-- end row -->
+                </div>
+                <!-- end container -->
+            </div>
+            <!-- end auth page content -->
+
+            <!-- footer -->
+            <footer class="footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="text-center">
+                                <p class="mb-0 text-muted">&copy;
+                                    <script>document.write(new Date().getFullYear())</script> P E R L A <i
+                                        class="mdi mdi-heart text-danger"></i>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            <!-- end Footer -->
+        </div>
+        <!-- end auth-page-wrapper -->
+
+        <!-- JAVASCRIPT -->
+        <script src="https://hcaptcha.com/1/api.js?hl=tr" async defer></script>
+        <script src="../assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="../assets/libs/simplebar/simplebar.min.js"></script>
+        <script src="../assets/libs/node-waves/waves.min.js"></script>
+        <script src="../assets/libs/feather-icons/feather.min.js"></script>
+        <script src="../assets/js/pages/plugins/lord-icon-2.1.0.js"></script>
+
+        <!-- particles js -->
+        <script src="../assets/libs/particles.js/particles.js"></script>
+        <!-- particles app js -->
+        <script src="../assets/js/pages/particles.app.js"></script>
+        <!-- validation init -->
+        <script src="../assets/js/pages/form-validation.init.js"></script>
+        <!-- password create init -->
+        <script src="../assets/js/pages/passowrd-create.init.js"></script>
+</body>
+
+</html>
